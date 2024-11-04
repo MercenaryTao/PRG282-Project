@@ -1,0 +1,20 @@
+C:\Users\Administrator\source\repos\TestPrep1\bin\Debug\TestPrep1.exe.config
+C:\Users\Administrator\source\repos\TestPrep1\bin\Debug\TestPrep1.exe
+C:\Users\Administrator\source\repos\TestPrep1\bin\Debug\TestPrep1.pdb
+C:\Users\Administrator\source\repos\TestPrep1\obj\Debug\PRG282 Project Concept.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\TestPrep1\obj\Debug\TestPrep1.Form1.resources
+C:\Users\Administrator\source\repos\TestPrep1\obj\Debug\TestPrep1.Properties.Resources.resources
+C:\Users\Administrator\source\repos\TestPrep1\obj\Debug\PRG282 Project Concept.csproj.GenerateResource.cache
+C:\Users\Administrator\source\repos\TestPrep1\obj\Debug\PRG282 Project Concept.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\TestPrep1\obj\Debug\TestPrep1.exe
+C:\Users\Administrator\source\repos\TestPrep1\obj\Debug\TestPrep1.pdb
+C:\Users\Administrator\source\repos\PRG282 Project\bin\Debug\TestPrep1.exe.config
+C:\Users\Administrator\source\repos\PRG282 Project\bin\Debug\TestPrep1.exe
+C:\Users\Administrator\source\repos\PRG282 Project\bin\Debug\TestPrep1.pdb
+C:\Users\Administrator\source\repos\PRG282 Project\obj\Debug\PRG282 Project Concept.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\PRG282 Project\obj\Debug\TestPrep1.Form1.resources
+C:\Users\Administrator\source\repos\PRG282 Project\obj\Debug\TestPrep1.Properties.Resources.resources
+C:\Users\Administrator\source\repos\PRG282 Project\obj\Debug\PRG282 Project Concept.csproj.GenerateResource.cache
+C:\Users\Administrator\source\repos\PRG282 Project\obj\Debug\PRG282 Project Concept.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\PRG282 Project\obj\Debug\TestPrep1.exe
+C:\Users\Administrator\source\repos\PRG282 Project\obj\Debug\TestPrep1.pdb
