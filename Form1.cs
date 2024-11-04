@@ -20,10 +20,9 @@ namespace TestPrep1
     {
         List<Student> students = new List<Student>();
         string filePath = @"C:\Users\Administrator\source\repos\PRG282 Project\dataFile.txt";
-        string rawDatafilePath = @"C:\Users\Administrator\source\repos\PRG282 Project\rawData.txt";
+        string rawDatafilePath = @"C:\Users\Administrator\source\repos\PRG282 Project\students.txt";
         string dataLink = @"Data Source=MARS\SQLEXPRESS;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
-        //SqlConnection conn = new SqlConnection();
         public Form1()
         {
             InitializeComponent();
@@ -98,37 +97,26 @@ namespace TestPrep1
                 foreach (string line in File.ReadLines(rawDatafilePath))
                 {
 
-                    string[] data = line.Split(',');
+                    string[] data = line.Split(' ');
 
 
-                    //string[] data = line.Split(',');
-
-                    // Ensure we have exactly 3 elements (Name, Surname, Job)
 
                     if (string.IsNullOrWhiteSpace(line)) continue; // Skip empty or whitespace-only lines
 
-                    if (data.Length < 20)
-                    {
-                        
+                    if (data.Length < 7)
+                    {                        
 
                         // Trim each element to remove extra whitespace
-                        string sID = data[0];
+                        string sID = data[0].Trim();
                         string name = data[1].Trim();
                         string surname = data[2].Trim();
                         string age = data[3].Trim();
                         string course = data[4].Trim();
 
-
-                        // Create a new Person object
                         Student student = new Student(sID, name, surname, age, course);
 
-
-                        // Add the Person object to the people list
                         students.Add(student);
 
-
-
-                        // Add a row to the DataGridView for this person
                         dataDisplay.Rows.Add(name, student.Surname, student.Age, student.Course);
                     }
                     else { MessageBox.Show(@"Catastrophic Failure",
@@ -137,7 +125,7 @@ $"Processing line: {line}"); }
             }
             catch (Exception ex)
             {
-                // Display an error message if the file can't be read
+       
                 MessageBox.Show(ex.Message);
             }
 
