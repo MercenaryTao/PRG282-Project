@@ -18,3 +18,13 @@ C:\Users\Administrator\source\repos\PRG282 Project\obj\Debug\PRG282 Project Conc
 C:\Users\Administrator\source\repos\PRG282 Project\obj\Debug\PRG282 Project Concept.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\source\repos\PRG282 Project\obj\Debug\TestPrep1.exe
 C:\Users\Administrator\source\repos\PRG282 Project\obj\Debug\TestPrep1.pdb
+C:\Users\Administrator\source\repos\IsITWorking\bin\Debug\TestPrep1.exe.config
+C:\Users\Administrator\source\repos\IsITWorking\bin\Debug\TestPrep1.exe
+C:\Users\Administrator\source\repos\IsITWorking\bin\Debug\TestPrep1.pdb
+C:\Users\Administrator\source\repos\IsITWorking\obj\Debug\PRG282 Project Concept.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\IsITWorking\obj\Debug\TestPrep1.Form1.resources
+C:\Users\Administrator\source\repos\IsITWorking\obj\Debug\TestPrep1.Properties.Resources.resources
+C:\Users\Administrator\source\repos\IsITWorking\obj\Debug\PRG282 Project Concept.csproj.GenerateResource.cache
+C:\Users\Administrator\source\repos\IsITWorking\obj\Debug\PRG282 Project Concept.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\IsITWorking\obj\Debug\TestPrep1.exe
+C:\Users\Administrator\source\repos\IsITWorking\obj\Debug\TestPrep1.pdb

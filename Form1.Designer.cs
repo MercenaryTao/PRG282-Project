@@ -38,15 +38,16 @@
             this.saveToFile = new System.Windows.Forms.Button();
             this.readFromFile = new System.Windows.Forms.Button();
             this.dataDisplay = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.stuAge = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.stuID = new System.Windows.Forms.TextBox();
             this.studentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.course = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.stuAge = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.stuID = new System.Windows.Forms.TextBox();
+            this.summaryReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataDisplay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,9 +126,9 @@
             // 
             this.readFromFile.Location = new System.Drawing.Point(486, 112);
             this.readFromFile.Name = "readFromFile";
-            this.readFromFile.Size = new System.Drawing.Size(75, 23);
+            this.readFromFile.Size = new System.Drawing.Size(106, 23);
             this.readFromFile.TabIndex = 8;
-            this.readFromFile.Text = "Read From File";
+            this.readFromFile.Text = "View All Students";
             this.readFromFile.UseVisualStyleBackColor = true;
             this.readFromFile.Click += new System.EventHandler(this.readFromFile_Click);
             // 
@@ -145,6 +146,34 @@
             this.dataDisplay.Name = "dataDisplay";
             this.dataDisplay.Size = new System.Drawing.Size(542, 284);
             this.dataDisplay.TabIndex = 9;
+            this.dataDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDisplay1_CellContentClick);
+            this.dataDisplay.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDisplay_CellClick);
+            this.dataDisplay.Click += new System.EventHandler(this.Form1_Load);
+            // 
+            // studentID
+            // 
+            this.studentID.HeaderText = "StudentID";
+            this.studentID.Name = "studentID";
+            // 
+            // pName
+            // 
+            this.pName.HeaderText = "Name";
+            this.pName.Name = "pName";
+            // 
+            // pSurname
+            // 
+            this.pSurname.HeaderText = "Surname";
+            this.pSurname.Name = "pSurname";
+            // 
+            // age
+            // 
+            this.age.HeaderText = "Age";
+            this.age.Name = "age";
+            // 
+            // course
+            // 
+            this.course.HeaderText = "Course";
+            this.course.Name = "course";
             // 
             // label4
             // 
@@ -178,30 +207,15 @@
             this.stuID.Size = new System.Drawing.Size(100, 20);
             this.stuID.TabIndex = 13;
             // 
-            // studentID
+            // summaryReport
             // 
-            this.studentID.HeaderText = "StudentID";
-            this.studentID.Name = "studentID";
-            // 
-            // pName
-            // 
-            this.pName.HeaderText = "Name";
-            this.pName.Name = "pName";
-            // 
-            // pSurname
-            // 
-            this.pSurname.HeaderText = "Surname";
-            this.pSurname.Name = "pSurname";
-            // 
-            // age
-            // 
-            this.age.HeaderText = "Age";
-            this.age.Name = "age";
-            // 
-            // course
-            // 
-            this.course.HeaderText = "Course";
-            this.course.Name = "course";
+            this.summaryReport.Location = new System.Drawing.Point(11, 361);
+            this.summaryReport.Name = "summaryReport";
+            this.summaryReport.Size = new System.Drawing.Size(75, 37);
+            this.summaryReport.TabIndex = 15;
+            this.summaryReport.Text = "Report";
+            this.summaryReport.UseVisualStyleBackColor = true;
+            this.summaryReport.Click += new System.EventHandler(this.summaryReport_Click);
             // 
             // Form1
             // 
@@ -209,6 +223,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.summaryReport);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.stuID);
             this.Controls.Add(this.label4);
@@ -253,6 +268,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pSurname;
         private System.Windows.Forms.DataGridViewTextBoxColumn age;
         private System.Windows.Forms.DataGridViewTextBoxColumn course;
+        private System.Windows.Forms.Button summaryReport;
     }
 }
 

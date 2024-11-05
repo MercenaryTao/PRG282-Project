@@ -29,7 +29,7 @@ namespace TestPrep1.PresentationLayer
            
         }
 
-        public string rawData()
+        public string SummaryReport()
         {
             return $"Student ID: {StudentID} | Name: {Name} | Surname: {Surname} | Age: {Age} | Course Enrolled: {Course}";
         }
