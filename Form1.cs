@@ -32,8 +32,8 @@ namespace TestPrep1
         {
             InitializeComponent();
             dataDisplay.AutoGenerateColumns = false;
-            fileHandler = new FileHandler(@"C:\Users\Administrator\source\repos\IsITWorking\students.txt");
-            fileHandler2 = new FileHandler(@"C:\Users\Administrator\source\repos\IsITWorking\dataFile.txt");
+            fileHandler = new FileHandler(@"C:\Users\Administrator\Desktop\Project PRG282 Repo\students.txt");
+            fileHandler2 = new FileHandler(@"C:\Users\Administrator\Desktop\Project PRG282 Repo\dataFile.txt");
 
         }
 
@@ -79,17 +79,14 @@ namespace TestPrep1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)///adds to the list
-        {
-           
-          
-        }
 
         private void saveToFile_Click(object sender, EventArgs e)///saves to the file
         {
+
+            //fileHandler.SaveStudentDetails(sID, name, surname, age, course);
+
             try
             {
-
                 string sID = stuID.Text;
                 string name = stuName.Text;
                 string surname = stuSurname.Text;
@@ -99,8 +96,44 @@ namespace TestPrep1
 
                 Student student = new Student(sID, name, surname, age, course);
 
+                foreach (string line in File.ReadLines(fileHandler.StudentFile))
+                {
+
+                    string[] data = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                    if (string.IsNullOrWhiteSpace(line)) continue; // Skip empty or whitespace-only lines
+
+                    // Trim each element to remove extra whitespace
+                    string stuID = data[0].Trim();
+                    string sName = data[1].Trim();
+                    string SSurname = data[2].Trim();
+                    string sAge = data[3].Trim();
+                    string sCourse = data[4].Trim();
+
+                    if (stuID == sID)
+                    {
+                        MessageBox.Show($"Student with student ID: {sID} already exists.");
+                        //dataDisplay.Rows.Add(student.StudentID, student.Name, student.Surname, student.Age, student.Course);
+                        return;
+                    }           
+                    
+                }
+          
                 students.Add(student);
+                using (StreamWriter sr = new StreamWriter(fileHandler.StudentFile))
+                {
+                    foreach (var item in students)
+                    {
+
+                        sr.WriteLine(item);
+
+                    }
+                }
+
+               
                 dataDisplay.Rows.Add(student.StudentID, student.Name, student.Surname, student.Age, student.Course);
+               
+                MessageBox.Show("Student Added!");
 
             }
             catch (Exception ex)
@@ -108,15 +141,7 @@ namespace TestPrep1
                 MessageBox.Show(ex.Message);
                 throw;
             }
-            using (StreamWriter sr = new StreamWriter(fileHandler.StudentFile))
-            {
-                foreach (var item in students)
-                {                   
-                    
-                    sr.WriteLine(item);
-                }
-            }
-           
+
         }
 
         private void readFromFile_Click(object sender, EventArgs e)
@@ -176,32 +201,35 @@ namespace TestPrep1
 
         private void dataDisplay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
- 
-            //dataGridView.
-        }
+            int rowIndex = e.RowIndex;
 
-        private void dataDisplay1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
+            if (rowIndex >= 0 && rowIndex < students.Count)
             {
-                int tableIndex = e.RowIndex;
+                DataGridViewRow row = dataDisplay.Rows[rowIndex];
 
-                DataGridViewRow dataGridView = new DataGridViewRow();
-                var selectedRow = dataGridView.Selected;
+                students[rowIndex].StudentID = row.Cells[0].Value.ToString();
+                students[rowIndex].Name = row.Cells[1].Value.ToString();
+                students[rowIndex].Surname = row.Cells[2].Value.ToString();
+                students[rowIndex].Age = row.Cells[3].Value.ToString();
+                students[rowIndex].Course = row.Cells[4].Value.ToString();
 
+                stuID.Text = students[rowIndex].StudentID.ToString();
+                stuName.Text = students[rowIndex].Name.ToString();
+                stuSurname.Text = students[rowIndex].Surname.ToString();
+                stuAge.Text = students[rowIndex].Age.ToString();
+                stuCourse.Text = students[rowIndex].Course.ToString();
 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                throw;
-            }
         }
+
 
         private void summaryReport_Click(object sender, EventArgs e)
         {
             students.Clear();
             int count = 0;
+            int avg = 0;
+            int ageSum = 0;
+
             try
             {
                 // Read each line from the file
@@ -222,11 +250,13 @@ namespace TestPrep1
                     Student student = new Student(sID, name, surname, age, course);
                     //students.Clear();
                     students.Add(student);
-                   
-                    count++;
 
+                    count++;
+                    ageSum = int.Parse(age);
                     using (StreamWriter sr = new StreamWriter(fileHandler2.StudentFile))
                     {
+                        avg = ageSum / count;
+                        sr.WriteLine($"Average Age: {age}");
                         if (count > 1)
                         {
                             sr.WriteLine($"{count} Records Exist");
@@ -235,21 +265,55 @@ namespace TestPrep1
                         {
                             sr.WriteLine($"Only 1 record exists");
                         }
-                       
+
                         foreach (var item in students)
                         {
                             sr.WriteLine(item.SummaryReport());
                         }
                     }
                 }
+
+
                 MessageBox.Show("operation Successful, summary report has been created.");
-               
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+          UpdateFrm2 updateForm= new UpdateFrm2();
+            //Form1 frm1=  new Form1();
+            this.Hide();
+            updateForm.Show();       
+         
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            { 
+                if (dataDisplay.SelectedRows.Count > 0) {
+                var selectedRow= dataDisplay.SelectedRows[0];   
+                    string studentID= selectedRow.Cells["ID"].Value.ToString();
+
+                    var lines =File.ReadAllLines(studentID);                  
+                
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

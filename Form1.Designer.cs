@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.stuCourse = new System.Windows.Forms.TextBox();
-            this.addToList = new System.Windows.Forms.Button();
             this.saveToFile = new System.Windows.Forms.Button();
             this.readFromFile = new System.Windows.Forms.Button();
             this.dataDisplay = new System.Windows.Forms.DataGridView();
@@ -48,6 +47,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.stuID = new System.Windows.Forms.TextBox();
             this.summaryReport = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnUndo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataDisplay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,16 +103,6 @@
             this.stuCourse.Size = new System.Drawing.Size(100, 20);
             this.stuCourse.TabIndex = 4;
             // 
-            // addToList
-            // 
-            this.addToList.Location = new System.Drawing.Point(486, 61);
-            this.addToList.Name = "addToList";
-            this.addToList.Size = new System.Drawing.Size(75, 37);
-            this.addToList.TabIndex = 6;
-            this.addToList.Text = "Add to List";
-            this.addToList.UseVisualStyleBackColor = true;
-            this.addToList.Click += new System.EventHandler(this.button1_Click);
-            // 
             // saveToFile
             // 
             this.saveToFile.Location = new System.Drawing.Point(486, 12);
@@ -146,7 +137,7 @@
             this.dataDisplay.Name = "dataDisplay";
             this.dataDisplay.Size = new System.Drawing.Size(542, 284);
             this.dataDisplay.TabIndex = 9;
-            this.dataDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDisplay1_CellContentClick);
+            this.dataDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDisplay_CellClick);
             this.dataDisplay.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDisplay_CellClick);
             this.dataDisplay.Click += new System.EventHandler(this.Form1_Load);
             // 
@@ -217,12 +208,34 @@
             this.summaryReport.UseVisualStyleBackColor = true;
             this.summaryReport.Click += new System.EventHandler(this.summaryReport_Click);
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(642, 37);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(93, 23);
+            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.Text = "Edit Students";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnUndo
+            // 
+            this.btnUndo.Location = new System.Drawing.Point(642, 141);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(75, 23);
+            this.btnUndo.TabIndex = 17;
+            this.btnUndo.Text = "Undo";
+            this.btnUndo.UseVisualStyleBackColor = true;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUndo);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.summaryReport);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.stuID);
@@ -231,7 +244,6 @@
             this.Controls.Add(this.dataDisplay);
             this.Controls.Add(this.readFromFile);
             this.Controls.Add(this.saveToFile);
-            this.Controls.Add(this.addToList);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.stuCourse);
             this.Controls.Add(this.label2);
@@ -255,7 +267,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox stuCourse;
-        private System.Windows.Forms.Button addToList;
         private System.Windows.Forms.Button saveToFile;
         private System.Windows.Forms.Button readFromFile;
         private System.Windows.Forms.DataGridView dataDisplay;
@@ -269,6 +280,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn age;
         private System.Windows.Forms.DataGridViewTextBoxColumn course;
         private System.Windows.Forms.Button summaryReport;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnUndo;
     }
 }
 
