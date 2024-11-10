@@ -38,6 +38,8 @@
             this.txtBxSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBxAge = new System.Windows.Forms.TextBox();
             this.lblCourse = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.lblSurname = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtBxName = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBxAge = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -149,6 +149,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Options";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 144);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Age";
+            // 
+            // txtBxAge
+            // 
+            this.txtBxAge.Location = new System.Drawing.Point(186, 137);
+            this.txtBxAge.Name = "txtBxAge";
+            this.txtBxAge.Size = new System.Drawing.Size(100, 20);
+            this.txtBxAge.TabIndex = 12;
+            // 
             // lblCourse
             // 
             this.lblCourse.AutoSize = true;
@@ -242,22 +258,6 @@
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 144);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Age";
-            // 
-            // txtBxAge
-            // 
-            this.txtBxAge.Location = new System.Drawing.Point(186, 137);
-            this.txtBxAge.Name = "txtBxAge";
-            this.txtBxAge.Size = new System.Drawing.Size(100, 20);
-            this.txtBxAge.TabIndex = 12;
             // 
             // btnBack
             // 

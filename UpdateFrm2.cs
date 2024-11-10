@@ -209,23 +209,74 @@ namespace TestPrep1
                 MessageBox.Show("Please select a student to remove");
             }
 
+            //if (dataGridView1.SelectedCells.Count>0)
+            //{ 
+            //    int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex; 
+
+            //    string sID = dataGridView1.Rows[selectedRowIndex].Cells["StudentID"].Value.ToString();
+            //    string name= dataGridView1.Rows[selectedRowIndex].Cells["Name"].Value.ToString();
+            //    string surname = dataGridView1.Rows[selectedRowIndex].Cells["Surname"].Value.ToString();
+            //    string age = dataGridView1.Rows[selectedRowIndex].Cells["Age"].Value.ToString();
+            //    string course = dataGridView1.Rows[selectedRowIndex].Cells["Course"].Value.ToString();
+
+            //    using (StreamWriter sw=new StreamWriter("deletedStudents.txt",true))
+            //    {
+            //        sw.WriteLine($"{sID} {name} {surname} {age} {course}");
+            //    }
+            //    List<string> allLines=File.ReadAllLines("students.txt").ToList();
+            //    allLines.RemoveAt(selectedRowIndex);
+            //    File.WriteAllLines("student.txt",allLines.ToArray());
+            //    dataGridView1.Rows.RemoveAt(selectedRowIndex);
+            //    MessageBox.Show("Added to recovery file");
+
+            //}
+
 
         }
 
         private void btnUndo_Click(object sender, EventArgs e)
         {
-            if (backupData.Count > 0)
+            //if (backupData.Count > 0)
+            //{
+            //    File.WriteAllLines("students.txt", backupData);
+
+            //    LoadStudents();
+            //    MessageBox.Show("Recover successful. Deleted record restored");
+
+            //}
+            //else {
+            //    MessageBox.Show("Nothing to recover");
+
+            //}  
+
+            string searchID=txtBxSearch.Text;
+            bool studentFound = false;
+
+            List<string>deletedLines=File.ReadAllLines("deletedStudents.txt").ToList();
+            foreach  ( string line in deletedLines)
             {
-                File.WriteAllLines("students.txt", backupData);
-
-                LoadStudents();
-                MessageBox.Show("Recover successful. Deleted record restored");
-
+                string[] data=line.Split(' ');
+                if (data[0].Trim()==searchID)
+                {
+                    using (StreamWriter sw=File.AppendText("students.txt"))
+                    {
+                        sw.WriteLine(line);
+                    } 
+                    deletedLines.Remove(line);
+                    deletedLines.Remove(line);
+                    File.WriteAllLines("deletedStudents.txt", deletedLines);
+                    MessageBox.Show($"Student with Id:{searchID} has been recovered");
+                    studentFound = true;
+                    break;
+                }
+                }
+            if (!studentFound)
+            {
+                MessageBox.Show("Student ID not found in recovery");
             }
-            else {
-                MessageBox.Show("Nothing to recover");
-            
-            } 
+
+            LoadStudents();
+
         }
 
         private void LoadStudents() { 
