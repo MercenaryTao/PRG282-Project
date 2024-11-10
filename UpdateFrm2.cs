@@ -142,20 +142,20 @@ namespace TestPrep1
                 allLines.RemoveAt(selectedRowIndex);
                 File.WriteAllLines("students.txt",allLines);
 
-                MessageBox.Show("Student removed successfully");
+               // MessageBox.Show("Student removed successfully");
             }
             else
             {
                 MessageBox.Show("Please select a student to remove");
             }
 
-            ///PART I NEED HELP WITH
+           
             if (dataGridView1.SelectedCells.Count > 0)
             {
                 int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
 
                 string sID = dataGridView1.Rows[selectedRowIndex].Cells[0].Value.ToString();
-                string name = dataGridView1.Rows[selectedRowIndex].Cells[1].Value.ToString();// <========= THIS PART HERE
+                string name = dataGridView1.Rows[selectedRowIndex].Cells[1].Value.ToString();
                 string surname = dataGridView1.Rows[selectedRowIndex].Cells[2].Value.ToString();
                 string age = dataGridView1.Rows[selectedRowIndex].Cells[3].Value.ToString();
                 string course = dataGridView1.Rows[selectedRowIndex].Cells[4].Value.ToString();
@@ -168,7 +168,7 @@ namespace TestPrep1
                 allLines.RemoveAt(selectedRowIndex);
                 File.WriteAllLines("student.txt", allLines.ToArray());
                 dataGridView1.Rows.RemoveAt(selectedRowIndex);
-                MessageBox.Show("Added to recovery file");
+                MessageBox.Show("Student has been removed successfully");
 
             }
 
@@ -248,7 +248,6 @@ namespace TestPrep1
         private void btnBack_Click(object sender, EventArgs e)
         {
             Form1 mainForm = new Form1();
-            //Form1 frm1=  new Form1();
             this.Hide();
             mainForm.Show();
         }
