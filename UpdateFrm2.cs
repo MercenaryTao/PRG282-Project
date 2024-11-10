@@ -25,8 +25,8 @@ namespace TestPrep1
         public UpdateFrm2()
         {
             InitializeComponent();
-            fileHandler = new FileHandler(@"C:\Users\Administrator\Desktop\Project PRG282 Repo\students.txt");
-            fileHandler2 = new FileHandler(@"C:\Users\Administrator\Desktop\Project PRG282 Repo\dataFile.txt");
+            fileHandler = new FileHandler(@"C:\Users\Kumar\Desktop\Project Updated 2\bin\Debug\students.txt");
+            fileHandler2 = new FileHandler(@"C:\Users\Kumar\Desktop\Project Updated 2\bin\Debug\dataFile.txt");
 
         }
         private void UpdateFrm2_Load(object sender, EventArgs e)
@@ -102,66 +102,112 @@ namespace TestPrep1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
+            //try
+            //{
+            //    //string studentID = txtBxID.Text;
+            //    bool studentFound = false;
+
+            //    var updatedLines = new List<string>();
+            //    foreach (string line in File.ReadAllLines(fileHandler.StudentFile))
+            //    {
+            //        string[] data = line.Split(' ');
+            //        string stID = data[0].Trim();
+            //        string stName = data[1].Trim();
+            //        string stSurname = data[2].Trim();
+            //        string stAge = data[3].Trim();
+            //        string stCourse = data[4].Trim();
+
+
+            //            stID = txtBxName.Text;
+            //            stName = txtBxSurname.Text;
+            //            stSurname  = txtBxCourse.Text;
+            //            studentFound = true;
+            //            MessageBox.Show("Students updated successfully");
+
+            //        updatedLines.Add(string.Join(",", data));
+
+            //    }
+
+            //    if (studentFound)
+            //    {
+            //        File.WriteAllLines("students.txt", updatedLines);
+            //        btnSearch_Click(sender, e);
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Update unsuccessful");
+            //    }
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //    throw;
+            //} 
+            if (dataGridView1.SelectedCells.Count>0)
             {
-                //string studentID = txtBxID.Text;
-                bool studentFound = false;
-               
-                var updatedLines = new List<string>();
-                foreach (string line in File.ReadAllLines(fileHandler.StudentFile))
-                {
-                    string[] data = line.Split(' ');
-                    string stID = data[0].Trim();
-                    string stName = data[1].Trim();
-                    string stSurname = data[2].Trim();
-                    string stAge = data[3].Trim();
-                    string stCourse = data[4].Trim();
+                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                
+                string updatedID=txtBxID.Text;
+                string updatedName = txtBxName.Text;
+                string updatedSurname=txtBxSurname.Text; 
+                string updatedAge=txtBxAge.Text;
+                string updatedCourse=txtBxCourse.Text;
 
-                 
-                        stID = txtBxName.Text;
-                        stName = txtBxSurname.Text;
-                        stSurname  = txtBxCourse.Text;
-                        studentFound = true;
-                        MessageBox.Show("Students updated successfully");
-                    
-                    updatedLines.Add(string.Join(",", data));
+                dataGridView1.Rows[selectedRowIndex].Cells[0].Value = updatedID;
+                dataGridView1.Rows[selectedRowIndex].Cells[1].Value = updatedName;
+                dataGridView1.Rows[selectedRowIndex].Cells[2].Value = updatedSurname;
+                dataGridView1.Rows[selectedRowIndex].Cells[3].Value = updatedAge;
+                dataGridView1.Rows[selectedRowIndex].Cells[4].Value = updatedCourse;
 
-                }
+                string[] allLines = File.ReadAllLines("students.txt");
+                allLines[selectedRowIndex] = $"{updatedID} {updatedName} {updatedSurname} {updatedAge} {updatedCourse}";
+                File.WriteAllLines("students.txt",allLines);
 
-                if (studentFound)
-                {
-                    File.WriteAllLines("students.txt", updatedLines);
-                    btnSearch_Click(sender, e);
-                }
-
+                MessageBox.Show("Student details updated successfully");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-                throw;
+                MessageBox.Show("Please enter details to update");
             }
         }
 
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count>0)
+            //if (dataGridView1.SelectedRows.Count>0)
+            //{
+            //    //    string selectedID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+
+
+            //    //    backupData=File.ReadAllLines("student.txt").ToList();
+            //    //    var newData = backupData.Where(DataGridLineStyle=>!DataGridLineStyle.StartsWith(selectedID+",")).ToList();
+
+            //    //    File.WriteAllLines("students.txt",newData);
+
+            //    //    LoadStudents();
+            //    //    MessageBox.Show("Student deleted successfully");
+            //    //}
+            //    //else
+            //    //{
+            //    //    MessageBox.Show("Please select a student to delete"); 
+            //}  
+            if (dataGridView1.SelectedCells.Count>0)
             {
-                string selectedID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
 
+                dataGridView1.Rows.RemoveAt(selectedRowIndex);
 
-                backupData=File.ReadAllLines("student.txt").ToList();
-                var newData = backupData.Where(DataGridLineStyle=>!DataGridLineStyle.StartsWith(selectedID+",")).ToList();
+                List<string> allLines = File.ReadAllLines("students.txt").ToList();
+                allLines.RemoveAt(selectedRowIndex);
+                File.WriteAllLines("students.txt",allLines);
 
-                File.WriteAllLines("students.txt",newData);
-
-                LoadStudents();
-                MessageBox.Show("Student deleted successfully");
+                MessageBox.Show("Student removed successfully");
             }
             else
             {
-                MessageBox.Show("Please select a student to delete");
-            } 
+                MessageBox.Show("Please select a student to remove");
+            }
 
 
         }

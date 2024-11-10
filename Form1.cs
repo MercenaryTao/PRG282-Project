@@ -32,8 +32,8 @@ namespace TestPrep1
         {
             InitializeComponent();
             dataDisplay.AutoGenerateColumns = false;
-            fileHandler = new FileHandler(@"C:\Users\Administrator\Desktop\Project PRG282 Repo\students.txt");
-            fileHandler2 = new FileHandler(@"C:\Users\Administrator\Desktop\Project PRG282 Repo\dataFile.txt");
+            fileHandler = new FileHandler(@"C:\Users\Kumar\Desktop\Project Updated 2\bin\Debug\students.txt");
+            fileHandler2 = new FileHandler(@"C:\Users\Kumar\Desktop\Project Updated 2\bin\Debug\dataFile.txt");
 
         }
 
