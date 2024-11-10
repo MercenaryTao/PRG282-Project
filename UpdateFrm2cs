@@ -25,8 +25,10 @@ namespace TestPrep1
         public UpdateFrm2()
         {
             InitializeComponent();
-            fileHandler = new FileHandler(@"C:\Users\Administrator\Desktop\Project PRG282 Repo\students.txt");
-            fileHandler2 = new FileHandler(@"C:\Users\Administrator\Desktop\Project PRG282 Repo\dataFile.txt");
+
+            //Change the following two string parameters to the directory as per your system:
+                fileHandler = new FileHandler(@"C:\Users\kaira\source\repos\PRG282-Project\students.txt");
+                fileHandler2 = new FileHandler(@"C:\Users\kaira\source\repos\PRG282-Project\dataFile.txt");
 
         }
         private void UpdateFrm2_Load(object sender, EventArgs e)
@@ -150,7 +152,7 @@ namespace TestPrep1
                 string selectedID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
 
-                backupData=File.ReadAllLines("student.txt").ToList();
+                backupData=File.ReadAllLines("students.txt").ToList();
                 var newData = backupData.Where(DataGridLineStyle=>!DataGridLineStyle.StartsWith(selectedID+",")).ToList();
 
                 File.WriteAllLines("students.txt",newData);

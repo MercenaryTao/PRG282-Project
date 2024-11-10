@@ -17,7 +17,7 @@ namespace TestPrep1.PresentationLayer
         public Student(string sID, string name, string surname, string age, string course)
         {
             this.StudentID = sID;
-                this.Name = name;
+            this.Name = name;
             this.Surname = surname;
             this.Age = age;
             this.Course = course;
@@ -26,7 +26,6 @@ namespace TestPrep1.PresentationLayer
         public override string ToString()
         {
             return $"{StudentID} {Name} {Surname} {Age} {Course}";
-           
         }
 
         public string SummaryReport()

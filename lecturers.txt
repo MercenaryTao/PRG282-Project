@@ -1,0 +1,5 @@
+1002;Mario;Carter;20;Ca'ching
+1003;Sonic;Hedgehog;30;iLikeToSpeed2628
+6121;Peaches;Plum;22;peaches22
+8075;Barbie;Roberts;30;iUsedToFloat
+4982;Ariana;Grande;28;yuh
