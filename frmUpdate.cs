@@ -196,7 +196,7 @@ namespace TestPrep1
 
             try
             {
-                //string studentID = txtBxID.Text;
+                
                 bool studentFound = false;
                 students.Clear();
                 var updatedLines = new List<string>();
@@ -240,7 +240,7 @@ namespace TestPrep1
                     {
                         dataGridView1.Rows.Add(student.StudentID, student.Name, student.Surname, student.Age, student.Course);
                     }
-                 //   MessageBox.Show("Students Deleted successfully");
+                
 
                     if (dataGridView1.SelectedCells.Count > 0)
                     {
