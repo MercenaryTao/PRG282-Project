@@ -209,12 +209,13 @@ namespace TestPrep1
                 MessageBox.Show("Please select a student to remove");
             }
 
+            /////PART I NEED HELP WITH
             //if (dataGridView1.SelectedCells.Count>0)
             //{ 
             //    int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex; 
 
             //    string sID = dataGridView1.Rows[selectedRowIndex].Cells["StudentID"].Value.ToString();
-            //    string name= dataGridView1.Rows[selectedRowIndex].Cells["Name"].Value.ToString();
+            //    string name= dataGridView1.Rows[selectedRowIndex].Cells["Name"].Value.ToString(); <=========THIS PART HERE
             //    string surname = dataGridView1.Rows[selectedRowIndex].Cells["Surname"].Value.ToString();
             //    string age = dataGridView1.Rows[selectedRowIndex].Cells["Age"].Value.ToString();
             //    string course = dataGridView1.Rows[selectedRowIndex].Cells["Course"].Value.ToString();
