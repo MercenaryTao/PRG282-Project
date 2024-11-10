@@ -28,8 +28,8 @@ namespace TestPrep1
             InitializeComponent();
 
             //Change the following two string parameters to the file directory as per your system:
-                fileHandler = new FileHandler(@"C:\Users\Administrator\Downloads\PRG282-Project\students.txt");
-                fileHandler2 = new FileHandler(@"C:\Users\Administrator\Downloads\PRG282-Project\dataFile.txt");
+                fileHandler = new FileHandler(@"C:\Users\Kumar\Desktop\RecoverButton\bin\Debug\students.txt");
+                fileHandler2 = new FileHandler(@"C:\Users\Kumar\Desktop\RecoverButton\bin\Debug\dataFile.txt");
 
         }
         private void UpdateFrm2_Load(object sender, EventArgs e)
@@ -241,6 +241,30 @@ namespace TestPrep1
                         dataGridView1.Rows.Add(student.StudentID, student.Name, student.Surname, student.Age, student.Course);
                     }
                     MessageBox.Show("Students Deleted successfully");
+
+                    if (dataGridView1.SelectedCells.Count > 0)
+                    {
+                        int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
+
+                        string sID = dataGridView1.Rows[selectedRowIndex].Cells[0].Value.ToString();
+                        string name = dataGridView1.Rows[selectedRowIndex].Cells[1].Value.ToString();
+                        string surname = dataGridView1.Rows[selectedRowIndex].Cells[2].Value.ToString();
+                        string age = dataGridView1.Rows[selectedRowIndex].Cells[3].Value.ToString();
+                        string course = dataGridView1.Rows[selectedRowIndex].Cells[4].Value.ToString();
+
+                        using (StreamWriter sw = new StreamWriter("deletedStudents.txt", true))
+                        {
+                            sw.WriteLine($"{sID} {name} {surname} {age} {course}");
+                        }
+                        List<string> allLines = File.ReadAllLines("students.txt").ToList();
+                        allLines.RemoveAt(selectedRowIndex);
+                        File.WriteAllLines("student.txt", allLines.ToArray());
+                        dataGridView1.Rows.RemoveAt(selectedRowIndex);
+                        MessageBox.Show("Student has been removed successfully");
+
+                    }
+
+
                 }
                 else
                 {
@@ -257,18 +281,34 @@ namespace TestPrep1
 
         private void btnUndo_Click(object sender, EventArgs e)
         {
-            if (backupData.Count > 0)
+            string searchID = txtBxSearch.Text;
+            bool studentFound = false;
+
+            List<string> deletedLines = File.ReadAllLines("deletedStudents.txt").ToList();
+            foreach (string line in deletedLines)
             {
-                File.WriteAllLines("students.txt", backupData);
-
-                LoadStudents();
-                MessageBox.Show("Recover successful. Deleted record restored");
-
+                string[] data = line.Split(' ');
+                if (data[0].Trim() == searchID)
+                {
+                    using (StreamWriter sw = File.AppendText("students.txt"))
+                    {
+                        sw.WriteLine(line);
+                    }
+                    deletedLines.Remove(line);
+                    deletedLines.Remove(line);
+                    File.WriteAllLines("deletedStudents.txt", deletedLines);
+                    MessageBox.Show($"Student with Id:{searchID} has been recovered");
+                    studentFound = true;
+                    break;
+                }
             }
-            else {
-                MessageBox.Show("Nothing to recover");
-            
-            } 
+            if (!studentFound)
+            {
+                MessageBox.Show("Student ID not found in recovery");
+            }
+
+            LoadStudents();
+
         }
 
         private void LoadStudents() { 
@@ -277,7 +317,7 @@ namespace TestPrep1
 
             var lines = File.ReadAllLines("students.txt");
             foreach ( var line in lines ) {
-                var data = line.Split(',');
+                var data = line.Split(' ');
                 dataGridView1.Rows.Add(data[0], data[1], data[2], data[3]);    
             
             }

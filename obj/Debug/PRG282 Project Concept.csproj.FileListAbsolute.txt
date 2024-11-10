@@ -79,3 +79,16 @@ C:\Users\Administrator\Downloads\PRG282-Project\obj\Debug\PRG282 Project Concept
 C:\Users\Administrator\Downloads\PRG282-Project\obj\Debug\PRG282 Project Concept.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Downloads\PRG282-Project\obj\Debug\TestPrep1.exe
 C:\Users\Administrator\Downloads\PRG282-Project\obj\Debug\TestPrep1.pdb
+C:\Users\Kumar\Desktop\RecoverButton\bin\Debug\TestPrep1.exe.config
+C:\Users\Kumar\Desktop\RecoverButton\bin\Debug\TestPrep1.exe
+C:\Users\Kumar\Desktop\RecoverButton\bin\Debug\TestPrep1.pdb
+C:\Users\Kumar\Desktop\RecoverButton\obj\Debug\PRG282 Project Concept.csproj.AssemblyReference.cache
+C:\Users\Kumar\Desktop\RecoverButton\obj\Debug\TestPrep1.frmDashboard.resources
+C:\Users\Kumar\Desktop\RecoverButton\obj\Debug\TestPrep1.frmLogin.resources
+C:\Users\Kumar\Desktop\RecoverButton\obj\Debug\TestPrep1.frmRegister.resources
+C:\Users\Kumar\Desktop\RecoverButton\obj\Debug\TestPrep1.Properties.Resources.resources
+C:\Users\Kumar\Desktop\RecoverButton\obj\Debug\TestPrep1.frmUpdate.resources
+C:\Users\Kumar\Desktop\RecoverButton\obj\Debug\PRG282 Project Concept.csproj.GenerateResource.cache
+C:\Users\Kumar\Desktop\RecoverButton\obj\Debug\PRG282 Project Concept.csproj.CoreCompileInputs.cache
+C:\Users\Kumar\Desktop\RecoverButton\obj\Debug\TestPrep1.exe
+C:\Users\Kumar\Desktop\RecoverButton\obj\Debug\TestPrep1.pdb

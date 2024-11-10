@@ -26,7 +26,7 @@ namespace TestPrep1
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //Change the following string to the database directory as per your system:
-                string path = @"C:\Users\Administrator\Downloads\PRG282-Project\lecturers.txt";
+                string path = @"C:\Users\Kumar\Desktop\RecoverButton\bin\Debug\lecturers.txt";
 
             string id = txtID.Text.Trim();
             string password = txtPw.Text.Trim();

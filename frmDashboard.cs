@@ -34,8 +34,8 @@ namespace TestPrep1
             dataDisplay.AutoGenerateColumns = false;
 
             //Change the following two string pararmeters to the file directory as per your system:
-                fileHandler = new FileHandler(@"C:\Users\Administrator\Downloads\PRG282-Project\students.txt");
-                fileHandler2 = new FileHandler(@"C:\Users\Administrator\Downloads\PRG282-Project\dataFile.txt");
+                fileHandler = new FileHandler(@"C:\Users\Kumar\Desktop\RecoverButton\bin\Debug\students.txt");
+                fileHandler2 = new FileHandler(@"C:\Users\Kumar\Desktop\RecoverButton\bin\Debug\dataFile.txt");
 
         }
 

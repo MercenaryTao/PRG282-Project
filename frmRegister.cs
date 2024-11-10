@@ -50,7 +50,7 @@ namespace TestPrep1
             string uniqueID = GenerateUniqueID();
 
 
-            string path = @"C:\Users\Administrator\Downloads\PRG282-Project\lecturers.txt";
+            string path = @"C:\Users\Kumar\Desktop\RecoverButton\bin\Debug\lecturers.txt";
 
             // Write data to file
             string newLecturerRecord = $"{uniqueID};{firstName};{lastName};{age};{password}";
@@ -70,7 +70,7 @@ namespace TestPrep1
         private string GenerateUniqueID()
         {
             Random random = new Random();
-            string path = @"C:\Users\Administrator\Downloads\PRG282-Project\lecturers.txt";
+            string path = @"C:\Users\Kumar\Desktop\RecoverButton\bin\Debug\lecturers.txt";
             string uniqueID;
 
             do
