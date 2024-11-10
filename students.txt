@@ -1,13 +1,9 @@
 102 Sarah Johnson 22 Mathematics
-102 Sarah Johnson 22 Mathematics
-103 Michael Brown 21 Engineering
 104 Emily Davis 19 Psychology
 105 David Wilson 23 Economics
 106 Linda Miller 20 Biology
 107 James Taylor 22 Literature
-108 Barbara Anderson 21 Chemistry
 109 Robert Thomas 24 Physics
 110 Patricia Moore 19 Philosophy
 1234567 James Taylor 22 Literature
-103 Michael Brown 21 Engineering
 1000 Sarah Johnson 22 Mathematics

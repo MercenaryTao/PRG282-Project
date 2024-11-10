@@ -52,3 +52,30 @@ C:\Users\Administrator\Desktop\Project PRG282 Repo\obj\Debug\PRG282 Project Conc
 C:\Users\Administrator\Desktop\Project PRG282 Repo\obj\Debug\PRG282 Project Concept.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\Project PRG282 Repo\obj\Debug\TestPrep1.exe
 C:\Users\Administrator\Desktop\Project PRG282 Repo\obj\Debug\TestPrep1.pdb
+C:\Users\kaira\source\repos\PRG282-Project\bin\Debug\TestPrep1.exe.config
+C:\Users\kaira\source\repos\PRG282-Project\bin\Debug\TestPrep1.exe
+C:\Users\kaira\source\repos\PRG282-Project\bin\Debug\TestPrep1.pdb
+C:\Users\kaira\source\repos\PRG282-Project\obj\Debug\PRG282 Project Concept.csproj.AssemblyReference.cache
+C:\Users\kaira\source\repos\PRG282-Project\obj\Debug\PRG282 Project Concept.csproj.SuggestedBindingRedirects.cache
+C:\Users\kaira\source\repos\PRG282-Project\obj\Debug\TestPrep1.Properties.Resources.resources
+C:\Users\kaira\source\repos\PRG282-Project\obj\Debug\TestPrep1.frmUpdate.resources
+C:\Users\kaira\source\repos\PRG282-Project\obj\Debug\PRG282 Project Concept.csproj.GenerateResource.cache
+C:\Users\kaira\source\repos\PRG282-Project\obj\Debug\PRG282 Project Concept.csproj.CoreCompileInputs.cache
+C:\Users\kaira\source\repos\PRG282-Project\obj\Debug\TestPrep1.exe
+C:\Users\kaira\source\repos\PRG282-Project\obj\Debug\TestPrep1.pdb
+C:\Users\kaira\source\repos\PRG282-Project\obj\Debug\TestPrep1.frmLogin.resources
+C:\Users\kaira\source\repos\PRG282-Project\obj\Debug\TestPrep1.frmDashboard.resources
+C:\Users\kaira\source\repos\PRG282-Project\obj\Debug\TestPrep1.frmRegister.resources
+C:\Users\Administrator\Downloads\PRG282-Project\bin\Debug\TestPrep1.exe.config
+C:\Users\Administrator\Downloads\PRG282-Project\bin\Debug\TestPrep1.exe
+C:\Users\Administrator\Downloads\PRG282-Project\bin\Debug\TestPrep1.pdb
+C:\Users\Administrator\Downloads\PRG282-Project\obj\Debug\PRG282 Project Concept.csproj.AssemblyReference.cache
+C:\Users\Administrator\Downloads\PRG282-Project\obj\Debug\TestPrep1.frmDashboard.resources
+C:\Users\Administrator\Downloads\PRG282-Project\obj\Debug\TestPrep1.frmLogin.resources
+C:\Users\Administrator\Downloads\PRG282-Project\obj\Debug\TestPrep1.frmRegister.resources
+C:\Users\Administrator\Downloads\PRG282-Project\obj\Debug\TestPrep1.Properties.Resources.resources
+C:\Users\Administrator\Downloads\PRG282-Project\obj\Debug\TestPrep1.frmUpdate.resources
+C:\Users\Administrator\Downloads\PRG282-Project\obj\Debug\PRG282 Project Concept.csproj.GenerateResource.cache
+C:\Users\Administrator\Downloads\PRG282-Project\obj\Debug\PRG282 Project Concept.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Downloads\PRG282-Project\obj\Debug\TestPrep1.exe
+C:\Users\Administrator\Downloads\PRG282-Project\obj\Debug\TestPrep1.pdb

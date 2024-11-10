@@ -1,13 +1,9 @@
 Student ID: 102 | Name: Sarah | Surname: Johnson | Age: 22 | Course Enrolled: Mathematics
-Student ID: 102 | Name: Sarah | Surname: Johnson | Age: 22 | Course Enrolled: Mathematics
-Student ID: 103 | Name: Michael | Surname: Brown | Age: 21 | Course Enrolled: Engineering
 Student ID: 104 | Name: Emily | Surname: Davis | Age: 19 | Course Enrolled: Psychology
 Student ID: 105 | Name: David | Surname: Wilson | Age: 23 | Course Enrolled: Economics
 Student ID: 106 | Name: Linda | Surname: Miller | Age: 20 | Course Enrolled: Biology
 Student ID: 107 | Name: James | Surname: Taylor | Age: 22 | Course Enrolled: Literature
-Student ID: 108 | Name: Barbara | Surname: Anderson | Age: 21 | Course Enrolled: Chemistry
 Student ID: 109 | Name: Robert | Surname: Thomas | Age: 24 | Course Enrolled: Physics
 Student ID: 110 | Name: Patricia | Surname: Moore | Age: 19 | Course Enrolled: Philosophy
 Student ID: 1234567 | Name: James | Surname: Taylor | Age: 22 | Course Enrolled: Literature
-Student ID: 103 | Name: Michael | Surname: Brown | Age: 21 | Course Enrolled: Engineering
 Student ID: 1000 | Name: Sarah | Surname: Johnson | Age: 22 | Course Enrolled: Mathematics
