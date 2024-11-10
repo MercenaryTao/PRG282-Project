@@ -87,10 +87,7 @@ namespace TestPrep1
                 {
                     MessageBox.Show("No record found");
                 }
-           
-           
-
-            }
+                 }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -102,48 +99,7 @@ namespace TestPrep1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    //string studentID = txtBxID.Text;
-            //    bool studentFound = false;
-
-            //    var updatedLines = new List<string>();
-            //    foreach (string line in File.ReadAllLines(fileHandler.StudentFile))
-            //    {
-            //        string[] data = line.Split(' ');
-            //        string stID = data[0].Trim();
-            //        string stName = data[1].Trim();
-            //        string stSurname = data[2].Trim();
-            //        string stAge = data[3].Trim();
-            //        string stCourse = data[4].Trim();
-
-
-            //            stID = txtBxName.Text;
-            //            stName = txtBxSurname.Text;
-            //            stSurname  = txtBxCourse.Text;
-            //            studentFound = true;
-            //            MessageBox.Show("Students updated successfully");
-
-            //        updatedLines.Add(string.Join(",", data));
-
-            //    }
-
-            //    if (studentFound)
-            //    {
-            //        File.WriteAllLines("students.txt", updatedLines);
-            //        btnSearch_Click(sender, e);
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("Update unsuccessful");
-            //    }
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //    throw;
-            //} 
+           
             if (dataGridView1.SelectedCells.Count>0)
             {
                 int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
@@ -175,23 +131,7 @@ namespace TestPrep1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //if (dataGridView1.SelectedRows.Count>0)
-            //{
-            //    //    string selectedID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-
-
-            //    //    backupData=File.ReadAllLines("student.txt").ToList();
-            //    //    var newData = backupData.Where(DataGridLineStyle=>!DataGridLineStyle.StartsWith(selectedID+",")).ToList();
-
-            //    //    File.WriteAllLines("students.txt",newData);
-
-            //    //    LoadStudents();
-            //    //    MessageBox.Show("Student deleted successfully");
-            //    //}
-            //    //else
-            //    //{
-            //    //    MessageBox.Show("Please select a student to delete"); 
-            //}  
+             
             if (dataGridView1.SelectedCells.Count>0)
             {
                 int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
@@ -209,46 +149,35 @@ namespace TestPrep1
                 MessageBox.Show("Please select a student to remove");
             }
 
-            /////PART I NEED HELP WITH
-            //if (dataGridView1.SelectedCells.Count>0)
-            //{ 
-            //    int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex; 
+            ///PART I NEED HELP WITH
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
 
-            //    string sID = dataGridView1.Rows[selectedRowIndex].Cells["StudentID"].Value.ToString();
-            //    string name= dataGridView1.Rows[selectedRowIndex].Cells["Name"].Value.ToString(); <=========THIS PART HERE
-            //    string surname = dataGridView1.Rows[selectedRowIndex].Cells["Surname"].Value.ToString();
-            //    string age = dataGridView1.Rows[selectedRowIndex].Cells["Age"].Value.ToString();
-            //    string course = dataGridView1.Rows[selectedRowIndex].Cells["Course"].Value.ToString();
+                string sID = dataGridView1.Rows[selectedRowIndex].Cells[0].Value.ToString();
+                string name = dataGridView1.Rows[selectedRowIndex].Cells[1].Value.ToString();// <========= THIS PART HERE
+                string surname = dataGridView1.Rows[selectedRowIndex].Cells[2].Value.ToString();
+                string age = dataGridView1.Rows[selectedRowIndex].Cells[3].Value.ToString();
+                string course = dataGridView1.Rows[selectedRowIndex].Cells[4].Value.ToString();
 
-            //    using (StreamWriter sw=new StreamWriter("deletedStudents.txt",true))
-            //    {
-            //        sw.WriteLine($"{sID} {name} {surname} {age} {course}");
-            //    }
-            //    List<string> allLines=File.ReadAllLines("students.txt").ToList();
-            //    allLines.RemoveAt(selectedRowIndex);
-            //    File.WriteAllLines("student.txt",allLines.ToArray());
-            //    dataGridView1.Rows.RemoveAt(selectedRowIndex);
-            //    MessageBox.Show("Added to recovery file");
+                using (StreamWriter sw = new StreamWriter("deletedStudents.txt", true))
+                {
+                    sw.WriteLine($"{sID} {name} {surname} {age} {course}");
+                }
+                List<string> allLines = File.ReadAllLines("students.txt").ToList();
+                allLines.RemoveAt(selectedRowIndex);
+                File.WriteAllLines("student.txt", allLines.ToArray());
+                dataGridView1.Rows.RemoveAt(selectedRowIndex);
+                MessageBox.Show("Added to recovery file");
 
-            //}
+            }
 
 
         }
 
         private void btnUndo_Click(object sender, EventArgs e)
         {
-            //if (backupData.Count > 0)
-            //{
-            //    File.WriteAllLines("students.txt", backupData);
-
-            //    LoadStudents();
-            //    MessageBox.Show("Recover successful. Deleted record restored");
-
-            //}
-            //else {
-            //    MessageBox.Show("Nothing to recover");
-
-            //}  
+            
 
             string searchID=txtBxSearch.Text;
             bool studentFound = false;
@@ -286,7 +215,7 @@ namespace TestPrep1
 
             var lines = File.ReadAllLines("students.txt");
             foreach ( var line in lines ) {
-                var data = line.Split(',');
+                var data = line.Split(' ');
                 dataGridView1.Rows.Add(data[0], data[1], data[2], data[3]);    
             
             }
